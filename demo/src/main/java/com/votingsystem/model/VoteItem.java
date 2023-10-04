@@ -6,14 +6,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-//@Entity(name = "VoteItem")
 @Entity
 @Table(name = "VOTE_ITEM")
 public class VoteItem {
 
 	@Id
 	@Column(name = "ITEM_NO")
-	private Integer itemNo;
+	private int itemNo;
 	@Column(name = "ITEM_NAME")
 	private String itemName;
 
