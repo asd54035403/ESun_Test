@@ -1,18 +1,21 @@
 // VoteItem.java
 package com.votingsystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+//@Entity(name = "VoteItem")
 @Entity
 @Table(name = "VOTE_ITEM")
 public class VoteItem {
 
 	@Id
+	@Column(name = "ITEM_NO")
 	private Integer itemNo;
+	@Column(name = "ITEM_NAME")
 	private String itemName;
-	private String description; 
 
 	public Integer getItemNo() {
 		return itemNo;
@@ -30,11 +33,4 @@ public class VoteItem {
 		this.itemName = itemName;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 }
