@@ -18,22 +18,26 @@ public class VoteController {
 
 	@GetMapping("/items")
 	public List<VoteItem> getAllVoteItems() {
-		System.out.println(voteService.getAllVoteItems());
 		return voteService.getAllVoteItems();
 	}
 
-	@GetMapping("/items/{itemNo}")
-	public VoteItem getVoteItemByItemNo(@PathVariable Integer itemNo) {
-		return voteService.getVoteItemByItemNo(itemNo);
+	@PostMapping("/items")
+	public void addVoteItem(@RequestBody VoteItem voteItem) {
+		voteService.addVoteItem(voteItem);
 	}
 
-	@PostMapping("/vote/{itemNo}")
-	public void vote(@PathVariable Integer itemNo) {
+	@PutMapping("/items/{itemNo}")
+	public void updateVoteItem(@PathVariable Integer itemNo, @RequestBody VoteItem voteItem) {
+		voteService.updateVoteItem(itemNo, voteItem);
+	}
+
+	@DeleteMapping("/items/{itemNo}")
+	public void deleteVoteItem(@PathVariable Integer itemNo) {
+		voteService.deleteVoteItem(itemNo);
+	}
+
+	@PostMapping("/vote")
+	public void vote(@RequestParam Integer itemNo) {
 		voteService.vote(itemNo);
-	}
-
-	@GetMapping("/logs")
-	public List<VoteLog> getVoteLogs() {
-		return voteService.getVoteLogs();
 	}
 }
