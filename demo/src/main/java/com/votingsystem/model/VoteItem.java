@@ -13,6 +13,7 @@ public class VoteItem {
 	@Id
 	@Column(name = "ITEM_NO")
 	private int itemNo;
+	
 	@Column(name = "ITEM_NAME")
 	private String itemName;
 
@@ -30,6 +31,11 @@ public class VoteItem {
 
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
+	}
+
+	@Override
+	public String toString() {
+		return "VoteItem [itemNo=" + itemNo + ", itemName=" + itemName + "]";
 	}
 
 }

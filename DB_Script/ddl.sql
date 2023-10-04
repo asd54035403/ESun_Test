@@ -1,4 +1,4 @@
-USE test_databases:
+USE test_databases;
 
 DROP TABLE IF EXISTS VOTE_ITEM;
 DROP TABLE IF EXISTS VOTE_LOG;
