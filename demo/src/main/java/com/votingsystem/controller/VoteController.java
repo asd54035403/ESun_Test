@@ -13,15 +13,12 @@ import java.util.List;
 @RequestMapping("/api/vote")
 public class VoteController {
 
-	private final VoteService voteService;
-
 	@Autowired
-	public VoteController(VoteService voteService) {
-		this.voteService = voteService;
-	}
+	private VoteService voteService;
 
 	@GetMapping("/items")
 	public List<VoteItem> getAllVoteItems() {
+		System.out.println(voteService.getAllVoteItems());
 		return voteService.getAllVoteItems();
 	}
 
