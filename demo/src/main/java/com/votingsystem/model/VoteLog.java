@@ -1,27 +1,30 @@
 // VoteLog.java
 package com.votingsystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.Date;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+//@Entity(name = "VoteLog")
+//@Table(name = "VOTE_LOG")
 @Entity
 public class VoteLog {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Column(name="VOTER")
+	private String voter;
+//	@Column(name = "ITEM_NO")
 	private Integer itemNo;
-	private Date voteTime;
 
-	public Long getId() {
-		return id;
+	public String getVoter() {
+		return voter;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setVoter(String voter) {
+		this.voter = voter;
 	}
 
 	public Integer getItemNo() {
@@ -32,11 +35,4 @@ public class VoteLog {
 		this.itemNo = itemNo;
 	}
 
-	public Date getVoteTime() {
-		return voteTime;
-	}
-
-	public void setVoteTime(Date voteTime) {
-		this.voteTime = voteTime;
-	}
 }
