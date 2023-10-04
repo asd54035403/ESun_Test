@@ -14,14 +14,11 @@ import java.util.List;
 @Service
 public class VoteServiceImpl implements VoteService {
 
-	private final VoteItemRepository voteItemRepository;
-	private final VoteLogRepository voteLogRepository;
+	@Autowired
+	private VoteItemRepository voteItemRepository;
 
 	@Autowired
-	public VoteServiceImpl(VoteItemRepository voteItemRepository, VoteLogRepository voteLogRepository) {
-		this.voteItemRepository = voteItemRepository;
-		this.voteLogRepository = voteLogRepository;
-	}
+	private VoteLogRepository voteLogRepository;
 
 	@Override
 	public List<VoteItem> getAllVoteItems() {
@@ -38,7 +35,7 @@ public class VoteServiceImpl implements VoteService {
 		// Implement the logic to record the vote in the database
 		VoteLog voteLog = new VoteLog();
 		voteLog.setItemNo(itemNo);
-		voteLog.setVoteTime(new Date());
+
 		voteLogRepository.save(voteLog);
 	}
 
