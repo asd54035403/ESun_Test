@@ -12,6 +12,12 @@ public interface VoteService {
 
 	VoteItem getVoteItemByItemNo(Integer itemNo);
 
+	void addVoteItem(VoteItem voteItem);
+
+	void updateVoteItem(Integer itemNo, VoteItem voteItem);
+
+	void deleteVoteItem(Integer itemNo);
+
 	void vote(Integer itemNo);
 
 	List<VoteLog> getVoteLogs();
